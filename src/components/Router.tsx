@@ -11,9 +11,11 @@ import Header from './Header';
 import Login from 'pages/login';
 import SignUp from 'pages/signup';
 
-const Router = () => {
-  const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
+interface RouterProps {
+  isAuthenticated: boolean;
+}
 
+const Router = ({ isAuthenticated }: RouterProps) => {
   return (
     // firebase Auth가 인증되면 true로 변경해주는 로직 추가
 
