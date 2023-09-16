@@ -20,6 +20,12 @@ header {
   align-items: center;
 }
 
+.header__title {
+  font-size: large;
+  font-weight: 600;
+  cursor: pointer;
+}
+
 header a {
   margin: 0 10px;
   text-decoration: none;
@@ -142,11 +148,19 @@ footer a:hover {
 
 .post__delete:hover,
 .post__delete:focus {
+  cursor: pointer;
   color: black;
 }
 
-.post__edit:hover,
-.post__edit:focus {
+.post__edit a {
+  text-decoration: none;
+  color: gray;
+  cursor: pointer;
+}
+
+.post__edit a:hover,
+.post__edit a:focus {
+  cursor: pointer;
   color: black;
 }
 
@@ -171,10 +185,109 @@ footer a:hover {
 }
 
 .post__detail .post__text {
-  padding: 10px 0;
+  padding: 20px 0;
 }
 
 .post__detail .post__box1 {
   padding-top: 24px;
   padding-bottom: 24px;
+}
+
+.profile__logout {
+  text-decoration: none;
+  color: gray;
+  font-size: 14px;
+}
+
+.profile__logout:hover,
+.profile__logout:focus {
+  color: black;
+}
+
+.profile__box {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  font-size: 18px;
+  margin: 0 auto;
+  max-width: 680px;
+  text-align: left;
+  line-height: 24px;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.flex__box-lg {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+
+.profile__image {
+  width: 72px;
+  height: 72px;
+  background-color: #f2f2f2;
+  border-radius: 50%;
+}
+
+.profile__name {
+  font-size: 16px;
+  margin-top: 4px;
+}
+
+.form {
+  margin: 0 auto;
+  max-width: 680px;
+  padding: 20px;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+.form input {
+  height: 20px;
+  padding: 10px 10px;
+  font-size: 16px;
+  border-radius: 0.3rem;
+  border: 1px solid lightgray;
+  width: 96%;
+}
+
+.form textarea {
+  min-height: 400px;
+  padding: 10px 10px;
+  font-size: 16px;
+  border-radius: 0.3rem;
+  border: 1px solid lightgray;
+  width: 96%;
+}
+
+.form .form__block {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.form label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+
+.form__btn--submit {
+  width: 100%;
+  height: 45px;
+  padding: 10px 0 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid lightgray;
+  border-radius: 0.3rem;
+  background-color: #2563eb;
+  color: white;
+}
+
+.form__btn--submit:focus,
+.form__btn--submit:hover {
+  background-color: #2250b3;
+  border: 1px solid rgb(181, 181, 181);
 }

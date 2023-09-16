@@ -1,7 +1,15 @@
-import React from 'react';
+import Footer from 'components/Footer';
+import PostList from 'components/PostList';
+import Profile from 'components/Profile';
 
-const Profile = () => {
-  return <div></div>;
+const profile = () => {
+  return (
+    <>
+      <Profile />
+      <PostList hasNavigation={false} />
+      <Footer />
+    </>
+  );
 };
 
-export default Profile;
+export default profile;
