@@ -1,6 +1,8 @@
 import { app } from '../firebase';
 import { getAuth, signOut } from 'firebase/auth';
+import { userInfo } from 'api/recoil';
 import { toast } from 'react-toastify';
+import { useRecoilValue } from 'recoil';
 
 const Profile = () => {
   const onSignOut = async () => {
@@ -13,15 +15,15 @@ const Profile = () => {
     }
   };
 
-  const auth = getAuth(app);
+  const userInformation = useRecoilValue(userInfo);
 
   return (
     <div className='profile__box'>
       <div className='flex__box-lg'>
         <div className='profile__image'></div>
         <div>
-          <div className='profile__email'>{auth?.currentUser?.email}</div>
-          <div className='profile__name'>{auth?.currentUser?.displayName || '사용자'}</div>
+          <div className='profile__email'>{userInformation?.email}</div>
+          <div className='profile__name'>{userInformation?.displayName || '사용자'}</div>
         </div>
       </div>
       <div role='presentation' className='profile__logout' onClick={onSignOut}>

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import MainImg from './MainImg';
 
 interface PostListProps {
   hasNavigation?: boolean;
@@ -12,7 +13,6 @@ const PostList = ({ hasNavigation = true }: PostListProps) => {
 
   return (
     <>
-      <div className='homepage__main-img'>Welcome to 상진로그</div>
       {hasNavigation && (
         <div className='post__navigation'>
           <div

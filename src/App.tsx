@@ -1,13 +1,19 @@
 import { useEffect, useState } from 'react';
 import { app } from './firebase';
 import Router from 'components/Router';
-import { getAuth, onAuthStateChanged } from 'firebase/auth';
+import { User, getAuth, onAuthStateChanged } from 'firebase/auth';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'; // css 작성방법
 import Init from 'components/Init';
+import { useRecoilState } from 'recoil';
+import { userInfo } from 'api/recoil';
 
 const App = () => {
   const auth = getAuth(app);
+
+  const [user, setUser] = useRecoilState<User | null>(userInfo);
+
+  console.log('유저', user);
 
   const [init, setInit] = useState<boolean>(false);
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(!!auth?.currentUser);
@@ -16,14 +22,14 @@ const App = () => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
         setIsAuthenticated(true);
+        setUser(user);
       } else {
         setIsAuthenticated(false);
+        setUser(user);
       }
       setInit(true);
     });
   }, [auth]);
-
-  console.log('auth', isAuthenticated);
 
   return (
     <>
