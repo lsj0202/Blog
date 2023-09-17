@@ -30,8 +30,6 @@ const Router = ({ isAuthenticated }: RouterProps) => {
             <Route path='/posts/new' element={<New />} />
             <Route path='/posts/edit/:id' element={<Edit />} />
             <Route path='/profile' element={<Profile />} />
-            <Route path='/login' element={<Login />} />
-            <Route path='/signup' element={<SignUp />} />
             <Route path='*' element={<Navigate replace to='/' />} />
           </>
         ) : (
