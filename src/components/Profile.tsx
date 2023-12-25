@@ -6,6 +6,7 @@ import { useRecoilValue } from 'recoil';
 import { Link } from 'react-router-dom';
 
 const Profile = () => {
+  // asdf
   const onSignOut = async () => {
     try {
       const auth = getAuth(app);
