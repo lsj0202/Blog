@@ -3,6 +3,7 @@ import { getAuth, signOut } from 'firebase/auth';
 import { toast } from 'react-toastify';
 
 const Profile = () => {
+  // asdf
   const onSignOut = async () => {
     try {
       const auth = getAuth(app);
